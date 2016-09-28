@@ -102,6 +102,7 @@
 							</div>
 						{/foreach}
 					</div>
+
 					<div class="required form-group">
 						<label for="firstname">{l s='First name'} <sup>*</sup></label>
 						<input type="text" class="is_required validate form-control" data-validate="isName" id="firstname" name="firstname" value="{if isset($smarty.post.firstname)}{$smarty.post.firstname}{/if}" />
