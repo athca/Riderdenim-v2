@@ -105,7 +105,17 @@
                                 </label>
                             </div>
                         {/foreach}
-                    </div>                   
+                    </div>   
+
+<div class="required form-group">
+    <label for="height">{l s='Height(cm)'} <sup>*</sup></label>
+    <input id="height" class="is_required form-control validate" name="height" type="text" data-validate="isMessage" value="{if isset($smarty.post.height)}{$smarty.post.height}{/if}" />
+</div>
+<div class="required form-group">
+    <label for="weight">{l s='Weight(kg)'} <sup>*</sup></label>
+    <input id="weight" class="is_required form-control validate" name="weight" type="text" data-validate="isMessage" value="{if isset($smarty.post.weight)}{$smarty.post.weight}{/if}" />
+</div>
+                
                     <div class="required text form-group">
                         <label for="email">{l s='Email'} <sup>*</sup></label>
                         <input type="text" class="text form-control validate" id="email" name="email" data-validate="isEmail" value="{if isset($guestInformations) && isset($guestInformations.email) && $guestInformations.email}{$guestInformations.email}{/if}" />

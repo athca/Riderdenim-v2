@@ -53,6 +53,13 @@ class CustomerCore extends ObjectModel
     /** @var string Firstname */
     public $firstname;
 
+/** @var string height */
+public $height;
+ 
+/** @var string weight */
+public $weight;
+	
+
     /** @var string Birthday (yyyy-mm-dd) */
     public $birthday = null;
 
@@ -163,6 +170,8 @@ class CustomerCore extends ObjectModel
             'firstname' =>                    array('type' => self::TYPE_STRING, 'validate' => 'isName', 'required' => true, 'size' => 32),
             'email' =>                        array('type' => self::TYPE_STRING, 'validate' => 'isEmail', 'required' => true, 'size' => 128),
             'passwd' =>                    array('type' => self::TYPE_STRING, 'validate' => 'isPasswd', 'required' => true, 'size' => 32),
+            'height' =>                    array('type' => self::TYPE_STRING, 'required' => true, 'validate' => 'isCleanHtml', 'size' => 256),
+            'weight' =>                    array('type' => self::TYPE_STRING, 'required' => true, 'validate' => 'isCleanHtml', 'size' => 256),
             'last_passwd_gen' =>            array('type' => self::TYPE_STRING, 'copy_post' => false),
             'id_gender' =>                    array('type' => self::TYPE_INT, 'validate' => 'isUnsignedId'),
             'birthday' =>                    array('type' => self::TYPE_DATE, 'validate' => 'isBirthDate'),

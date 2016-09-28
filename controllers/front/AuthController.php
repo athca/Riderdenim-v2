@@ -411,6 +411,13 @@ class AuthControllerCore extends FrontController
         $firstnameAddress = Tools::getValue('firstname');
         $_POST['lastname'] = Tools::getValue('customer_lastname', $lastnameAddress);
         $_POST['firstname'] = Tools::getValue('customer_firstname', $firstnameAddress);
+
+$height = Tools::getValue('height');
+$weight = Tools::getValue('weight');
+$customer->height = $height;
+$customer->weight = $weight;
+
+
         $addresses_types = array('address');
         if (!Configuration::get('PS_ORDER_PROCESS_TYPE') && Configuration::get('PS_GUEST_CHECKOUT_ENABLED') && Tools::getValue('invoice_address')) {
             $addresses_types[] = 'address_invoice';
